@@ -110,7 +110,6 @@ while True:
                 How to use male voice: [aud .conv -m mydocument.pdf startPage:EndPage ]
                 How to use female voice: [aud .conv -f filename.pdf startPage:EndPage ]
                 
-                To convert all pdf files in a specific directory.. [aud .conv -voiceOption all]
             """
             print(help.strip())
 
