@@ -21,14 +21,18 @@ def readAloud(file_name,text,voice):
     voices = engine.getProperty('voices')
     if voice == '-f':
         engine.setProperty('voice',voices[1].id)
+    elif voice == "-m":
+        engine.setProperty('voice',voices[0].id)
     if ".pdf" in file_name:    
         file_name = file_name.replace('.pdf',"").strip()
+    print("Generating Audiobook.....")
     engine.save_to_file(text,file_name+".mp3")
     engine.runAndWait()
 
 def extract_text(file_name,pdf_begin,pdf_end,voice):
     if no_files > 0:
             print("Initializing....... ")
+
             if file_name in pdf_files:
                 if '.pdf' in file_name:
                     print("Opening file ..... ")
@@ -40,6 +44,10 @@ def extract_text(file_name,pdf_begin,pdf_end,voice):
                     doc.save("convertable.pdf")
                     pread = pyp.PdfFileReader("convertable.pdf")
                     if pread:
+                        if pdf_end == "end" or pdf_end == "END":
+                            pdf_end = pread.getNumPages()
+                        elif pdf_start == "start" or pdf_start == "START":
+                            pdf_start = 1
                         for y in range(pdf_begin,pdf_end):
                             page = pread.getPage(y)
                             text = page.extractText()
@@ -48,7 +56,7 @@ def extract_text(file_name,pdf_begin,pdf_end,voice):
                         if pdf_begin == pdf_end:
                             page = pread.getPage(pdf_begin)
                             text = page.extractText()
-                            return text            
+                            return text           
 
                     else:
                         print("[Error: Could not read text]")
@@ -58,7 +66,8 @@ def extract_text(file_name,pdf_begin,pdf_end,voice):
                 print(f"[Error: File not found '{file_name}']")    
     else:
         print("No pdf files detected")    
-            
+        
+#  This function is not yet complete..
 def extractAll(pdf_files,voice):
     if no_files>0:
         for file in pdf_files:
@@ -117,8 +126,7 @@ while True:
         print("Oops, An unexpected Error occured")
     finally:
         print("Exiting....")
-        if "./convertable.pdf" in onlyfiles:
-            conv = [a for a in onlyfiles if '_convertable' in onlyfiles]
-            for p in conv:
-                os.remove("./convertable.pdf")
+        conv = [a for a in onlyfiles if 'convertable' in a]
+        for p in conv:
+            os.remove(p)
         print("Done .")
