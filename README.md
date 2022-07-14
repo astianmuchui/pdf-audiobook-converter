@@ -4,7 +4,7 @@
   - Download the main.py file and run it in your desired folder from your terminal
   
  ### Command line
- #### To learn the syntax : 
+ #### To learn the whole syntax : 
  
    ```cli
       aud -help
