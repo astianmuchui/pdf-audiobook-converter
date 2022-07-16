@@ -1,4 +1,4 @@
-import tkinter as tk
+import tkinter 
 from tkinter import *
 from tkinter import messagebox
 import PyPDF2 as pyp
@@ -22,10 +22,11 @@ class AudConv():
         
             
 if __name__ == "__main__":
-    app = tk.Tk()
+    app = Tk()
     app.title("Audiobook Converter")
     app.geometry("700x500")
     app.configure(bg="#fff")
     root = AudConv(app)
+    
     app.mainloop()
     
