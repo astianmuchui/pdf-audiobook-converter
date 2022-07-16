@@ -1,4 +1,4 @@
-# pdf-to-audiobooks
+# pdf-to-audiobooks software
 
 ## Usage 
   - Download the main.py file and run it in your desired folder from your terminal
