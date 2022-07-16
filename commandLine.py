@@ -71,7 +71,7 @@ def extract_text(file_name,pdf_begin,pdf_end,voice):
     else:
         print("No pdf files detected")    
         
-#  This function is not yet complete..
+#  Contribute to the below function
 def extractAll(pdf_files,voice):
     if no_files>0:
         for file in pdf_files:
