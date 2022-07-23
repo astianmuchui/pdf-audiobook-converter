@@ -1,3 +1,4 @@
+# Relevant modules
 import PyPDF2 as pyp
 import pikepdf as pike
 from pikepdf import  *
@@ -72,6 +73,7 @@ def extract_text(file_name,pdf_begin,pdf_end,voice):
         print("No pdf files detected")    
         
 #  Contribute to the below function
+# To be revisited
 def extractAll(pdf_files,voice):
     if no_files>0:
         for file in pdf_files:
