@@ -1,7 +1,18 @@
 # pdf to audiobooks Converter
 
-## Usage 
-  - Download the main.py file and run it in your desired folder from your terminal
+# Introduction 
+The project is aimed at enhancing pdf to audiobook processing , 
+It makes use of a few python packages to open , decrypt and save content as an audiofile
+
+# Libraries Utilized
+```python
+PyPDF2
+pikepdf
+pyttsx3
+os
+```
+## How to use
+  - Download the commandLine.py file and run it in your desired folder from your terminal
   
  ### Command line
  #### To learn the whole syntax : 
@@ -42,4 +53,5 @@
    ```shell
      ~$ aud .conv -f mydocument.pdf START:5
    ```
-#### Finally: You probably want to add to this project, So why not fork and create a pull request ?
+#### Finally:
+- You probably want to add to this project, So why not fork and create a pull request ?
