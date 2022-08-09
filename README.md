@@ -5,7 +5,7 @@ The project is aimed at enhancing pdf to audiobook processing ,
 It makes use of a few python packages to open , decrypt and save content as an audiofile
 
 # Libraries Utilized
-```python
+```shell
 PyPDF2
 pikepdf
 pyttsx3
@@ -13,9 +13,11 @@ os
 ```
 ## How to use
   - Download the commandLine.py file and run it in your desired folder from your terminal
-  
- ### Command line
- #### To learn the whole syntax : 
+  - Install the required packages
+  - Run the file in your terminal
+
+### Command line
+#### To learn the whole syntax : 
  
    ```shell
     ~$ aud -help
